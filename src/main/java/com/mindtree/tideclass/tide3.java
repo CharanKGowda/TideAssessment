@@ -10,6 +10,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class tide3 {
+	public static void main(String[] args) {
+		search();
+	}
 	public static void search() {
 		 System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
          WebDriver driver=new ChromeDriver();
@@ -24,9 +27,10 @@ public class tide3 {
          WebElement web1=driver.findElement(By.xpath("//div[@class='container']//div[@class='col-12 search-total-results']//span"));
          String result=web1.getText();
          System.out.println("There are "+result+ " for liquid");
-         driver.findElement(By.xpath("//div[@class='container']//div[@class='col-12 search-total-results']//div[@class='search-sorting-select']//option[@value='desc']")).click();
+         //driver.findElement(By.xpath("//div[@class='container']//div[@class='col-12 search-total-results']//div[@class='search-sorting-select']//option[@value='desc']")).click();
          driver.findElement(By.xpath("//div[@class='container']//div[@class='col-12 search-total-results']//div[@class='search-sorting-select']//option[@value='asc']")).click();
          //driver.findElement(By.xpath("//div[@class='search-container']//div[@class='container']//button[text()='Products (34)']")).click();
+         d.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='product-preview']//a[@href='/en-us/shop/type/liquid/tide-free-and-gentle-liquid']")));
          driver.findElement(By.xpath("//div[@class='product-preview']//a[@href='/en-us/shop/type/liquid/tide-free-and-gentle-liquid']")).click();
          driver.findElement(By.xpath("//div[@class='select-wrapper']//option[@value='Regular']")).click();
          //driver.findElement(By.xpath("//div[@class='select-wrapper']//option[@value='High Efficiency']")).click();
