@@ -17,21 +17,26 @@ public class tide1 {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter\n 1 to LOG IN\n 2 to SELECT A PRODUCT FROM SHOP PRODUCTS\n 3 to SEARCH FOR PRODUCT\n 4 to PERFORM ALL ");
 		a=sc.nextInt();
-		if(a==1) {
+		switch(a) {
+		case 1:
 		 login();
-		}
- 		if(a==2) {
+		 break;
+		
+		case 2:
  			tide2.shop();
- 		}
- 		if(a==3) {
+ 			break;
+ 		
+		case 3:	
  			tide3.search();
- 		}
- 		if(a==4) {
+ 			break;
+ 		
+		case 4:
  			login();
  			tide2.shop();
  			tide3.search();
- 		}
- 		else {
+ 			break;
+ 		
+		default:
  			System.out.println("INVALID INPUT");
  		}
 	}
@@ -58,7 +63,7 @@ public class tide1 {
 		driver.findElement(By.xpath("//form[@name='signInForm']//input[@id='login-email']")).sendKeys("qwerty786@gmail.com");
 		driver.findElement(By.xpath("//form[@name='signInForm']//input[@id='login-password']")).sendKeys("Qwerty@123");
 		driver.findElement(By.xpath("//form[@name='signInForm']//input[@value='LOG IN']")).click();
-		driver.switchTo().window(parentid);
+		//driver.switchTo().window(parentid);
 	}
 }
 
